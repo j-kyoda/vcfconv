@@ -171,6 +171,10 @@ def parse_entry(lines):
         if name == 'EMAIL':
             entry['mail'].append(value)
             continue
+        # description
+        if name == 'NOTE':
+            entry['description'] = value
+            continue
         # tel
         if name == 'TEL':
             if 'CELL'in head['TYPE']:
